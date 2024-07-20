@@ -1,11 +1,11 @@
-// /src/pages/_app.tsx
+'use client'
 
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import MainLayout from "../layouts/MainLayout"
 import AdminLayout from "../layouts/AdminLayout"
 import type { AppProps } from "next/app"
-import "../app/globals.css"
+import "../../src/globals.css"
 
 function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()

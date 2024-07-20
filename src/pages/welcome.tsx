@@ -1,40 +1,41 @@
-
-
-import Link from "next/link"
+"use client"
+import { empresasIcon, particularIcon } from "@/assets/icons/welcome"
+import Image from "next/image"
 
 export default function Welcome() {
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center">
-			<div className="bg-white shadow-lg rounded-lg p-8 max-w-md mx-auto">
-				<h1 className="text-4xl font-bold text-blue-600 mb-4">
-					Bem Vindo ao AngoVerso
-				</h1>
-				<p className="text-gray-600 mb-8">
-					Transformando números em soluções estratégicas
-				</p>
-				<div className="flex flex-col space-y-4">
-					<Link
-						href="/login?type=individual"
-						className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-					>
-						<i className="fas fa-user mr-2"></i>
-						Particulares
-					</Link>
-					<Link
-						href="/login?type=business"
-						className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-					>
-						<i className="fas fa-building mr-2"></i>
-						Empresas
-					</Link>
+		<section className="w-full h-full flex flex-col justify-between text-center">
+			<div className="flex flex-col justify-between my-auto h-64">
+				<div className="flex flex-col gap-2 items-center ">
+					<h1 className="text-[#0154FFED] text-4xl font-bold">
+						Seja bem-vindo ao AngoVerso!
+					</h1>
+					<p className="text-[#00000070] font-bold">
+						Transformando números em soluções estratégicas.
+					</p>
 				</div>
-				<div className="mt-8 flex justify-between text-sm text-gray-500">
-					<Link href="/terms" className="hover:underline">
-						Termos e Políticas de Privacidade
-					</Link>
-					<span>Todos os Direitos Reservados</span>
+
+				<div className=" flex flex-col gap-2 w-full justify-center items-center">
+					<button className="group flex items-center justify-center gap-2 bg-[#0154FFED] py-2 h-12 px-4 w-52 text-white hover:bg-[#0156ffb2] rounded-xl transition-colors duration-500">
+						<Image src={particularIcon} alt="" className="w-4" />{" "}
+						Particular
+					</button>
+					<button className="group flex items-center justify-center gap-2 bg-[#0154FFED] py-2 h-12 px-4 w-52 text-white hover:bg-[#0156ffb2] rounded-xl transition-colors duration-500">
+						<Image src={empresasIcon} alt="" className="w-5" />{" "}
+						Empresas
+					</button>
 				</div>
 			</div>
-		</main>
+
+			<div className="flex justify-between px-4 py-2">
+				<p className="underline text-[#00000070] text-xs">
+					Termos e Políticas de Privacidade
+				</p>
+
+				<p className="underline text-[#00000070] text-xs">
+					Todos os Direitos Reservados
+				</p>
+			</div>
+		</section>
 	)
 }

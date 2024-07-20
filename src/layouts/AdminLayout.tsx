@@ -1,6 +1,6 @@
 // /src/layouts/AdminLayout.tsx
 
-import "../app/globals.css"
+import "../../src/globals.css"
 
 export default function AdminLayout({
   children,

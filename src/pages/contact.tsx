@@ -1,6 +1,6 @@
 // /src/pages/contact.tsx
 
 export default function Contact() {
-    return <main>Contact Page</main>
+    return <main className="text-blue-800">Contact Page</main>
   }
   
