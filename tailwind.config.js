@@ -5,6 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				Inter: ["Inter", "sans-serif"],
+				Inria: ["Inria Sans", "sans-serif"],
 			},
 		},
 	},

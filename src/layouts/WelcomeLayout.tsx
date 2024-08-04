@@ -6,7 +6,7 @@ const WelcomeLayout: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
 	return (
-		<main className="flex h-screen font-Inter">
+		<main className="flex h-screen font-Inria">
 			<div className="w-1/2 overflow-y-auto">{children}</div>
 
 			<div className="w-1/2 relative">

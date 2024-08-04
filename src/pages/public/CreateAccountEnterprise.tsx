@@ -3,15 +3,17 @@ import { logo } from "../../assets/icons"
 import { useNavigate } from "react-router-dom"
 import { useForm, Controller } from "react-hook-form"
 
+// Define the interface for the form data
 interface FormData {
-	fullName: string
+	companyName: string
 	email: string
+	nif: string
 	phone: string
 	password: string
 	confirmPassword: string
 }
 
-const CreateAccountParticular: React.FC = () => {
+const CreateAccountEnterprise: React.FC = () => {
 	const navigate = useNavigate()
 	const {
 		handleSubmit,
@@ -28,7 +30,7 @@ const CreateAccountParticular: React.FC = () => {
 	return (
 		<div className="w-full min-h-screen flex flex-col items-center justify-center py-12 relative">
 			<p className="absolute top-4 right-4 border-b-4 border-[#1976D2]">
-				Particular
+				Empresas
 			</p>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -43,24 +45,28 @@ const CreateAccountParticular: React.FC = () => {
 					</p>
 				</div>
 
-				<div className="flex flex-col">
+				<div className="flex flex-col ">
 					<div className="w-full border-b border-[#000000] flex h-10">
 						<Controller
-							name="fullName"
+							name="companyName"
 							control={control}
 							defaultValue=""
-							rules={{ required: "Nome completo é obrigatório" }}
+							rules={{ required: "Nome da empresa é obrigatório" }}
 							render={({ field }) => (
 								<input
 									type="text"
-									className="bg-transparent outline-none w-full"
-									placeholder="Nome completo"
+									className="w-full"
+									placeholder="Nome da empresa"
 									{...field}
 								/>
 							)}
 						/>
 					</div>
-					{errors.fullName && <span className="w-full text-red-600 text-xs text-left">{String(errors.fullName.message)}</span>}
+					{errors.companyName && (
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.companyName.message)}
+						</span>
+					)}
 
 					<div className="w-full border-b border-[#000000] flex h-10">
 						<Controller
@@ -84,7 +90,33 @@ const CreateAccountParticular: React.FC = () => {
 							)}
 						/>
 					</div>
-					{errors.email && <span className="w-full text-red-600 text-xs text-left">{String(errors.email.message)}</span>}
+					{errors.email && (
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.email.message)}
+						</span>
+					)}
+
+					<div className="w-full border-b border-[#000000] flex h-10">
+						<Controller
+							name="nif"
+							control={control}
+							defaultValue=""
+							rules={{ required: "NIF é obrigatório" }}
+							render={({ field }) => (
+								<input
+									type="tel"
+									className="bg-transparent outline-none w-full"
+									placeholder="NIF"
+									{...field}
+								/>
+							)}
+						/>
+					</div>
+					{errors.nif && (
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.nif.message)}
+						</span>
+					)}
 
 					<div className="w-full border-b border-[#000000] flex h-10">
 						<Controller
@@ -102,7 +134,11 @@ const CreateAccountParticular: React.FC = () => {
 							)}
 						/>
 					</div>
-					{errors.phone && <span className="w-full text-red-600 text-xs text-left">{String(errors.phone.message)}</span>}
+					{errors.phone && (
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.phone.message)}
+						</span>
+					)}
 
 					<div className="w-full border-b border-[#000000] flex h-10">
 						<Controller
@@ -120,7 +156,11 @@ const CreateAccountParticular: React.FC = () => {
 							)}
 						/>
 					</div>
-					{errors.password && <span className="w-full text-red-600 text-xs text-left">{String(errors.password.message)}</span>}
+					{errors.password && (
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.password.message)}
+						</span>
+					)}
 
 					<div className="w-full border-b border-[#000000] flex h-10">
 						<Controller
@@ -146,7 +186,9 @@ const CreateAccountParticular: React.FC = () => {
 						/>
 					</div>
 					{errors.confirmPassword && (
-						<span  className="w-full text-red-600 text-xs text-left">{String(errors.confirmPassword.message)}</span>
+						<span className="w-full text-red-600 text-xs text-left">
+							{String(errors.confirmPassword.message)}
+						</span>
 					)}
 				</div>
 
@@ -170,4 +212,4 @@ const CreateAccountParticular: React.FC = () => {
 	)
 }
 
-export default CreateAccountParticular
+export default CreateAccountEnterprise
